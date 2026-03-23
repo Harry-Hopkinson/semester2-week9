@@ -1,3 +1,7 @@
+#ifndef STACK_H
+#define STACK_H
+
+#include "stack_structures.h"
 
 Data *createData( int val );
 Stack *createStack( void );
@@ -8,3 +12,5 @@ void freeStack( Stack *stack );
 
 void push( Stack *stack, Data *data );
 Data *pop( Stack *stack );
+
+#endif // STACK_H
