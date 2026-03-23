@@ -100,6 +100,5 @@ void traverseR( Node *node )
 
     printf(" %d",node->data->value);
     traverseR(node->next);
-    
 }
 
