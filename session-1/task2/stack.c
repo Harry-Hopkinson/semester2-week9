@@ -44,6 +44,7 @@ void pop( Stack *stack )
     stack->top = node->next;         // move stack top
     stack->size--;                   // decrease stack size
 
-    freeNode(node);                 // free the popped node
+    freeNode(node);                   // free the popped node
+
     return;
 }
