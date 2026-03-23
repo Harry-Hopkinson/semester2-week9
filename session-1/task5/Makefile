@@ -1,6 +1,6 @@
 
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -s
 
 SRC = main.c queue.c
 OBJ = $(SRC:.c=.o)

@@ -1,3 +1,7 @@
+#ifndef QUEUE_H
+#define QUEUE_H
+
+#include "queue_structures.h"
 
 Data *createData( int val );
 Queue *createQueue( void );
@@ -7,4 +11,6 @@ void displayQueue( Queue *queue );
 void freeQueue( Queue *queue );
 
 void join( Queue *queue, Data *data );
-Data *leave( Queue *queue );
+void leave( Queue *queue );
+
+#endif // QUEUE_H

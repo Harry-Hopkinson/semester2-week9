@@ -1,3 +1,5 @@
+#ifndef QUEUE_STRUCTURES_H
+#define QUEUE_STRUCTURES_H
 
 typedef struct _data {
     int value;
@@ -9,5 +11,10 @@ typedef struct _queue {
     struct _data **data;    // queue array of Data*
     
     // define indices for queue back, front and length
+    int front;
+    int back;
+    int length;
     
 } Queue;
+
+#endif // QUEUE_STRUCTURES_H
