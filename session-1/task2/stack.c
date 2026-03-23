@@ -2,25 +2,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "node_structures.h"
 #include "node.h"
-#include "stack_structures.h"
 #include "stack.h"
 
 /*
  * create and initialise the stack
  */
-Stack *createStack( void ) {
+Stack *createStack( void )
+{
     Stack *new = malloc( sizeof(Stack) );
     new->top = NULL;
     new->size = 0;
+    
     return new;
 }
 
 /*
  * push - add a new Node item at the top of the stack
  */
-void push( Stack *stack, int val ) {
+void push( Stack *stack, int val )
+{
     Node *new = createNode( createData( val ) );
 
     new->next = stack->top;           // add node at top
@@ -33,14 +34,16 @@ void push( Stack *stack, int val ) {
 /*
  * pop - return the Node item on top of the stack
  */
-Node *pop( Stack *stack ) {
+void pop( Stack *stack )
+{
     if( stack->size == 0 )           // check if stack is already empty
-        return NULL;
+        return;
 
     Node *node = stack->top;
     
     stack->top = node->next;         // move stack top
     stack->size--;                   // decrease stack size
 
-    return node;
+    freeNode(node);                 // free the popped node
+    return;
 }

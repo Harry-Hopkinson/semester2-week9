@@ -10,6 +10,7 @@ Data *createData( int val )
 {
     Data *new = malloc( sizeof(Data) );
     new->value = val;
+    
     return new;
 }
 
@@ -21,6 +22,7 @@ Node *createNode( Data *data )
     Node *new = malloc( sizeof(Node) );
     new->data = data;
     new->next = NULL;
+
     return new;
 }
 
@@ -34,6 +36,7 @@ void freeNode( Node *node )
         free(node->data);         // free Data first
         free(node);               // then the Node
     }
+
     return;
 }
 
@@ -48,6 +51,7 @@ void freeNodes( Node *node )
         freeNode(node);         // note that we have to retain a pointer to the next node before free'ing
         node=next;
     }
+
     return;
 }
 

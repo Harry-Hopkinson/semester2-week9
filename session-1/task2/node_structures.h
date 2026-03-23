@@ -1,9 +1,15 @@
+#ifndef NODE_STRUCTURES_H
+#define NODE_STRUCTURES_H
 
-typedef struct _data {
+typedef struct _data
+{
     int value;
 } Data;
 
-typedef struct _node {
+typedef struct _node
+{
     struct _data *data;
     struct _node *next;
 } Node;
+
+#endif

@@ -1,24 +1,28 @@
-
-#include <stdio.h>
 #include <stdlib.h>
 
-#include "node_structures.h"
 #include "node.h"
-#include "stack_structures.h"
 #include "stack.h"
 
-int main( void ) {
+int main( void )
+{
 
     // create an empty stack
     Stack *stack = createStack();
 
     // push a node
     push(stack,1);
-    traverseI(stack->top);  // display the stack
+    push(stack,2);
+    push(stack,3);
 
-    // free stack memory
+    traverseI(stack->top);
+    traverseW(stack->top);
+    traverseR(stack->top);
+
+    pop(stack);
+    traverseI(stack->top);
+    
+    // free nodes and stack
     freeNodes( stack->top );
-    // free stack
     free(stack);
 
     return 0;
