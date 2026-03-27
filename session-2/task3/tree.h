@@ -1,3 +1,7 @@
+#ifndef TREE_H
+#define TREE_H
+
+#include "tree_structure.h"
 
 Tree *makeTree( void );
 Node *makeNode( Data *data );
@@ -9,3 +13,5 @@ void traverseIn( Node *loc );
 
 void freeNode( Node *node );
 void deallocateTree( Node *loc );
+
+#endif

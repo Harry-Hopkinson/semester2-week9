@@ -1,6 +1,5 @@
-
 CC = gcc
-CFLAGS = -Wall -Wextra 
+CFLAGS = -Wall -Wextra -s
 
 SRC = main.c tree.c
 OBJ = $(SRC:.c=.o)
