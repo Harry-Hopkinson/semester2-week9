@@ -18,8 +18,8 @@ int main( void )
     displayQueue(queue);
 
     // free queue dynamic memory
-    freeQueue( queue );
-    free( queue );
+    freeQueue(queue);
+    free(queue);
     
     return 0;
 }

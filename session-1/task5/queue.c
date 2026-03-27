@@ -6,7 +6,7 @@
 /*
  * create a Data item for the queue
  */
-Data *createData(int val )
+Data *createData(int val)
 {
   Data *new = malloc(sizeof(Data));
   new->value = val;
@@ -16,7 +16,7 @@ Data *createData(int val )
 /*
  * allocate and initialise a queue data structure 
  */
-Queue *createQueue( void )
+Queue *createQueue()
 {
     Queue *new = malloc(sizeof(Queue));
     new->blockSize = 10;
@@ -34,7 +34,7 @@ Queue *createQueue( void )
 /*
  * reallocate dynamic array data if we have reached queue->size
  */
-void enlargeQueue( Queue *queue )
+void enlargeQueue(Queue *queue)
 {
     queue->size += queue->blockSize;
     queue->data = realloc(queue->data,queue->size); // allocate a further 'block' to the queue to increase size
@@ -44,7 +44,7 @@ void enlargeQueue( Queue *queue )
 /*
  * join a Data item onto the queue at the back
  */
-void join( Queue *queue, Data *new )
+void join(Queue *queue, Data *new)
 {
     // add new item at the back
     queue->data[queue->back] = new;
@@ -59,7 +59,7 @@ void join( Queue *queue, Data *new )
 /*
  * remove the front Data item from the queue
  */
-void leave( Queue *queue )
+void leave(Queue *queue)
 {
     // remove front item
     Data *new = queue->data[queue->front];
@@ -76,7 +76,7 @@ void leave( Queue *queue )
 /*
  * display queue data - traverse list from front to back
  */
-void displayQueue ( Queue *queue )
+void displayQueue(Queue *queue)
 {
     printf("Queue length %d\n",queue->length);
     for( int k=queue->front; k<queue->back; ++k )
@@ -89,7 +89,7 @@ void displayQueue ( Queue *queue )
 /*
  * free dynamic array data
  */
-void freeQueue( Queue *queue )
+void freeQueue(Queue *queue)
 {
     for( int k=0; k<queue->size; ++k )
         free( queue->data[k] ); // free queue Data item
