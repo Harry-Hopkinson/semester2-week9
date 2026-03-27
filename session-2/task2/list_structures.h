@@ -1,3 +1,5 @@
+#ifndef LIST_STRUCTURES_H
+#define LIST_STRUCTURES_H
 
 typedef struct _data {
     int value;
@@ -9,3 +11,5 @@ typedef struct _list {
     struct _data **data;    // list array of Data*
     int length;             // length of actual list
 } List;
+
+#endif // LIST_STRUCTURES_H
